@@ -1,0 +1,69 @@
+３章　基本データを操作する　-組み込みオブジェクト-
+
+・オブジェクトとは
+　・モノそのもの
+・オブジェクト　＝　プロパティ　＋　メソッド
+・new演算子で、オリジナルを複製したコピーを生成
+　＝インスタンス化
+	    var 変数名 = new オブジェクト名([引数, ...])
+・静的プロパティ / 静的メソッド
+  ……インスタンスを生成せずに利用できるプロパティ/メソッド。
+  　クラスプロパティ/クラスメソッドとも
+　←→インスタンスプロパティ/インスタンスメソッド
+　　＝インスタンスを生成して呼び出す
+・組み込みオブジェクト
+　……JSに標準で搭載されており、
+　　JSが動作する全ての環境で利用可能。
+　　Array, Daate, String, Number, Errorなど
+・基本データ型をnew演算子を使って
+　インスタンス化することは避けるべき
+        var str = new String('こんにちは！');
+　などの書き方はしてはいけない（Stringは基本データ型）
+
+・Stringオブジェクト
+　検索 / indexOf, lastIndexOf, startsWith, endsWith, includes
+　抽出 / charAt, slice, substring, substr, split
+　大小変換 / toLowerCase, toUpperCase
+　その他 / concat, repeat, trim, length
+
+・Numberオブジェクト
+　プロパティ / MAX_VALUE, MAX_SAFE_INTEGER, MIN_VALUE, MIN_SAFE_INTEGER,
+             EPSILON, NaN, NEGATIVE_INFINITY, POSITIVE_INFINITY
+　メソッド / toString, toExponential, toFixed, toPrecision, 
+            isNaN, isFinite, isInteger, isSafeInteger, parseFloat, parseInt
+
+・Symbolオブジェクト　ES5より登場
+　・定数の値として利用する
+        const MONDAY = Symbol();
+        const TUESDAY = Symbol();
+        const WEDNESDAY = Symbol();
+    異なるSymbol命令で生成されたシンボルはユニークになる
+
+・Mathオブジェクト
+
+・Arrayオブジェクト
+　基本 / length, isArray, toString, toLocaleString, indexOf, lastIndexOf, 
+        entries, keys, values
+　加工 / concat, join, slice, splice, from, of, copyWithIn, fill
+　追加・削除 / pop, push, shift, unshift
+　並べ替え / reverse, sort
+　コールバック / forEach, map, every, some, filter, 
+            find, findIndex, reduce, reduceRight
+        
+        ・スタック……push & pop（末尾の要素を削除）
+        ・キュー（待ち行列）……push & shift（先頭の要素を削除）
+
+・Mapオブジェクト　連想配列を操作する
+　size, set, get, has, delete, clear, keys. values, entries, forEach
+
+・Setオブジェクト　重複しない値の集合
+　・Setオブジェクトでできること
+    ・hasメソッドで値の有無を判定する
+    ・for...ofで中身を列挙する
+　size, add has delete, clear, entries. values, forEach
+
+・Dateオブジェクト
+　・リテラル表現が存在しないので、
+　　オブジェクトの生成には必ずコンストラクターを利用する
+
+・RegExpオブジェクト　正規表現で文字を自在に操作する
