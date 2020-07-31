@@ -1,0 +1,56 @@
+４章　繰り返し利用するコードを１箇所にまとめる　-関数-
+
+・関数の定義
+　・function命令で定義する
+　・Functionコンストラクター経由で定義する
+　・関数リテラル表現で定義する
+　・アロー関数で定義する
+
+・関数名はキャメルで書く　ex.getTriangle
+
+・あんまり使わない（Functionコンストラクター経由の定義）
+        var 変数名 = new Function(引数, ... ,関数の本体);
+        
+        ex.
+        var getTriangle = new Function('base', 'height', 'return * height / 2');
+        console.log(getTriangle(5,2))
+・関数リテラルを使った定義（無名関数）
+        var getTriangle = function(base, height) {
+            return base * height / 2;
+        };
+        console.log(getTriangle(5, 2))
+・アロー関数を使った定義
+        let getTriangle(base, height) => {
+            return base * height / 2;
+        };
+        console.log(getTriangle(5, 2))
+
+・スコープの範囲
+　・varを使わずに宣言された変数は全てグローバル変数
+　  -→ローカル変数を定義するには、必ずvarを使う
+
+・ローカル変数の有効範囲……巻き上げ
+
+・argumentsオブジェクト……関数呼び出しのタイミングで生成され、呼び出し元から与えられた引数の値を保持する
+        例えば、「実際に与えられた引数の数と、要求する引数の数を比較し、異なる場合にはエラーを返す」
+        というような処理を記述できる
+　・引数のデフォルト値を設定する　-→　default_args.js
+　・可変長引数の関数　＝　引数の個数があらかじめ決まっていない関数
+
+・名前付き引数でコードを読みやすくする
+        function getTriangle({ base: = 1, height  = 1 }) {
+            return base * height / 2;
+        }
+
+        console.log(getTriangle({ base:5, height:4 }));
+
+・再帰関数　関数自身を再帰的に呼び出す　
+　　　……　これにより、同じような手続きを繰り返す処理をコンパクトに記述できる
+    例：階乗計算 5!
+        function factorial(n) {
+            if (n != 0) { return n * factorial(n - 1); }
+            return 1;
+        }
+
+・高階関数　関数の引数も関数
+　・引数として使われる関数は、その場限りのものであることが多い -→　匿名関数を利用しよう
