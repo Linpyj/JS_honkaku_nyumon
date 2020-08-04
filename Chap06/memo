@@ -1,0 +1,19 @@
+６章　DOM操作
+
+クライアントサイドとしてのJavaScript
+　・要素ノードの取得
+　・文書ツリー間の行き来
+　・イベントドリブンモデル
+
+・要素ノードの取得
+    ・getElementByIdメソッド id名をキーに要素を取得する
+    ・getElementsByTagNameメソッド タグ名をキーに要素を取得する
+    ・getElementsByNameメソッド name属性をキーに要素を取得する
+    ・getElementsByClassNameメソッド class属性をキーに要素を取得する
+    ・querySelector / querySelectorAllメソッド セレクター式に合致した要素を取得する
+
+・文書ツリー間の行き来　ノードウォーキング
+    getXxxx / queryXxxxメソッドで特定の要素を取得した後、
+    近接するノードをノードウォーキングで取得する
+
+・イベントドリブンモデル
