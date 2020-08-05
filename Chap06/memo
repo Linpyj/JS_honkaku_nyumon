@@ -1,19 +1,45 @@
 ６章　DOM操作
 
-クライアントサイドとしてのJavaScript
+・クライアントサイドとしてのJavaScript
 　・要素ノードの取得
 　・文書ツリー間の行き来
 　・イベントドリブンモデル
 
-・要素ノードの取得
-    ・getElementByIdメソッド id名をキーに要素を取得する
-    ・getElementsByTagNameメソッド タグ名をキーに要素を取得する
-    ・getElementsByNameメソッド name属性をキーに要素を取得する
-    ・getElementsByClassNameメソッド class属性をキーに要素を取得する
-    ・querySelector / querySelectorAllメソッド セレクター式に合致した要素を取得する
+    ・要素ノードの取得
+        ・getElementByIdメソッド id名をキーに要素を取得する
+        ・getElementsByTagNameメソッド タグ名をキーに要素を取得する
+        ・getElementsByNameメソッド name属性をキーに要素を取得する
+        ・getElementsByClassNameメソッド class属性をキーに要素を取得する
+        ・querySelector / querySelectorAllメソッド セレクター式に合致した要素を取得する
 
-・文書ツリー間の行き来　ノードウォーキング
-    getXxxx / queryXxxxメソッドで特定の要素を取得した後、
-    近接するノードをノードウォーキングで取得する
+    ・文書ツリー間の行き来　ノードウォーキング
+        getXxxx / queryXxxxメソッドで特定の要素を取得した後、
+        近接するノードをノードウォーキングで取得する
 
-・イベントドリブンモデル
+        ・子要素を全取得…childNodes
+        ・firstChild / nextSibling
+        ・firstElementChild / nextElementsSibling
+
+    ・イベントドリブンモデル
+        ・イベントリスナーで操作する
+        ・getAttribute / setAttribute
+        ・attributes
+        ・innerHTML / textContent……textContentの方が高速 & セキュリティ的にも安全なので、
+                                textContentをメインで使う
+        ・innerHTMLのセキュリティ上の脆弱性…XSS（クロスサイトスクリプティング）
+                                        →エンドユーザーが入力したHTMLも実行できてしまう
+
+・フォーム要素にアクセスする
+　・入力ボックス / 選択ボックスの値を取得…valueプロパティで指定するだけ
+　・チェックボックス / ラジオボタンの値を取得…checkedプロパティでチェック状態にあるかどうかを走査
+　
+・ノードの追加・削除
+　・子ノードの追加…appendChild
+　・子ノードの削除…removeChild
+　・子ノードの置換…replaceChild
+
+
+
+
+
+p.342以降、一旦スキップ
