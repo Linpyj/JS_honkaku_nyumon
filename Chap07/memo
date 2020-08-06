@@ -1,0 +1,8 @@
+７章　クライアントサイドJavaScript開発を極める
+
+・ブラウザーオブジェクトが提供する基本メソッド
+　・confirmメソッド　確認ダイアログの表示
+        window.confirm('ページを送信しても良いですか？');
+　・setInterval / setTimeoutメソッド　タイマー機能を実装する
+        window.setInterval(func, 時間間隔（単位はミリ秒）)
+        window.setTimeout(func, 時間間隔（単位はミリ秒）)
